@@ -1,0 +1,18 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) throws Exception {
+        int count = 0;
+        Scanner scan = new Scanner(System.in);
+        String s = scan.next();
+        char target = '1';
+        for(char x: s.toCharArray()){
+            if(x == target){
+              count++;
+            }
+        }
+
+
+    System.out.println(count);
+    }
+}
