@@ -1,0 +1,32 @@
+import java.util.*;
+
+public class Main {
+	public static void main(String[] args) throws Exception {
+        Scanner scan = new Scanner(System.in);
+        int N = scan.nextInt();
+        int[] d = new int[N];
+        for(int i =0;i<N;i++){
+          d[i] = scan.nextInt();
+        }
+     	//配列を降順にソート
+        for(int i =0;i<N-1 ; i++){
+          for(int j =0; j<(N-1)-i; j++){
+            if(d[j]<d[j+1]){
+             	int temp = d[j];
+            	d[j] = d[j+1];
+            	d[j+1] = temp;
+            }
+          }
+        }
+     	//直径の比較とカウント
+      	int count = 0;
+      	int tag = 1000;
+      	for (int i=0 ;i <N;i++){
+          if(tag>d[i]){
+            count +=1;
+            tag = d[i];
+          }
+        }
+        System.out.println(count);
+  	}
+}
