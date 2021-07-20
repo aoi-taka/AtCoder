@@ -1,0 +1,27 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) throws Exception {
+        Scanner scan = new Scanner(System.in);
+        int N = scan.nextInt();
+        int A = scan.nextInt();
+        int B = scan.nextInt();
+        
+        int sum = 0;
+        int result = 0;
+        for(int n = N; n>0; n--){
+            //各桁の和
+            String Nstr =  String.valueOf(n);
+            for(int i = 0; i < Nstr.length();i++){
+                String str = String.valueOf(Nstr.charAt(i));
+                sum += Integer.parseInt(str);
+            }
+            //A<=和<=Bの判定
+            if (A<=sum && sum <=B){
+                result += n ;
+            }
+           sum = 0;
+        }
+      System.out.println(+result);
+    }
+}
