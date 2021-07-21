@@ -1,0 +1,25 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) throws Exception {
+        Scanner scan = new Scanner(System.in);
+        String S = scan.next();
+        //String T = "";
+        
+        //長く考えてもわからなかったので、解説サイトを参考に
+        //replace()を使用
+        
+        S = S.replace("eraser","");
+        S = S.replace("erase","");
+        S = S.replace("dreamer","");
+        S = S.replace("dream","");
+        
+        if(S == ""){
+            System.out.println("YES");
+        }else{
+            System.out.println("NO");
+        }
+        
+        
+    }
+}
