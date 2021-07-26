@@ -1,0 +1,39 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) throws Exception {
+        Scanner scan = new Scanner(System.in);
+        
+        int N = scan.nextInt();
+        int t =0;
+        int x =0;
+        int y =0;
+        int ti1 =0;
+        int xi1 =0;
+        int yi1 =0;
+        
+        String ans ="";
+        
+        for(int i =0;i<N;i++){
+            t =scan.nextInt();
+            x =scan.nextInt();
+            y =scan.nextInt();
+            //(t - ti1) % 2 != zettai % 2等一部の考えはあっていたが、
+            //絶対値を点や他にも不要な条件を付けくわえたために、
+            //実行時間制限を超えたり、不正解であったりしたため
+            //他の人の回答を参考に作成
+            int zettai = Math.abs(xi1 - x) + Math.abs(yi1 - y);
+			if(t - ti1 < zettai || (t - ti1) % 2 != zettai % 2) {
+                ans = "No";
+                break;
+            }else{
+                ans = "Yes";
+            }
+            ti1 =t;
+            xi1 =x;
+            yi1 =y;
+            
+        }
+        System.out.println(ans);
+    }
+}
